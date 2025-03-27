@@ -22,7 +22,7 @@ co([]() {
   for(int i=3000000; i<6000000; i++) {
     // 计算密集型任务
     if(i % 1000 == 0) {
-      AsyncSafeGuard guard;  // 声明安全点，允许调度器抢占
+      AsyncSafeGuard guard;  // 声明安全点，内部有系统调用不允许抢占
       std::cout << i << " co1" << std::endl;
     }
   }
